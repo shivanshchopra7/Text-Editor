@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #editor {
+      min-height: 300px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-top: 10px;
+      overflow-y: auto;
+      position: relative;
+    }
+    .draggable {
+      position: absolute;
+      cursor: move;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="bg-white p-4 rounded-lg shadow-md w-full max-w-4xl">
+    <div class="flex space-x-2">
+      <button id="undo" class="px-3 py-1 bg-blue-500 text-white rounded">Undo</button>
+      <button id="redo" class="px-3 py-1 bg-blue-500 text-white rounded">Redo</button>
+    </div>
+    <div id="editor" class="mt-4 border border-gray-300 rounded p-2"></div>
+    <div class="flex space-x-2 mt-4">
+      <select id="fontFamily" class="border border-gray-300 rounded p-2">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+      <input type="number" id="fontSize" class="border border-gray-300 rounded p-2" value="16" min="1">
+      <input type="color" id="fontColor" class="border border-gray-300 rounded p-2" value="#000000">
+    </div>
+    <button id="addText" class="mt-4 px-3 py-1 bg-green-500 text-white rounded">Add Text</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
